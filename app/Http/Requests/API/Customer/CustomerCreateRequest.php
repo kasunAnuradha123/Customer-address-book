@@ -25,7 +25,7 @@ class CustomerCreateRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'company' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'numeric', 'digits:10'],
-            'email' => ['required', 'string', 'email', "unique:customers,email"],
+            'email' => ['required', 'string', 'email', "unique:customers,email", 'regex:/^(?:[a-zA-Z0-9._%+-]+)@(?:[a-zA-Z0-9-]+\.)+([a-zA-Z]{2,})$/',],
             'country' => ['required', 'string'],
         ];
     }
